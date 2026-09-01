@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="心地よさで、自分と世界を変えていく。3分間のビジュアル休憩体験。">
+  <title>CHILCONY — Visual Rest Timer</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="hero">
+    <div class="slideshow" aria-hidden="true">
+      <img class="slide is-active" src="assets/slide-05.png" alt="">
+      <img class="slide" src="assets/slide-01.png" alt="">
+      <img class="slide" src="assets/slide-02.png" alt="">
+      <img class="slide" src="assets/slide-04.png" alt="">
+      <img class="slide" src="assets/slide-03.png" alt="">
+      <img class="slide" src="assets/slide-06.png" alt="">
+    </div>
+    <div class="shade" aria-hidden="true"></div>
+
+    <header class="site-header">
+      <a class="brand" href="#top" aria-label="CHILCONY ホーム">
+        <strong>CHILCONY</strong>
+        <span>VISUAL REST TIMER</span>
+      </a>
+      <nav aria-label="メインナビゲーション">
+        <a href="#about">ABOUT</a>
+        <a href="#features">HOW IT WORKS</a>
+        <a href="#sound">SOUND</a>
+        <button class="try-button" type="button" data-preview>TRY</button>
+      </nav>
+    </header>
+
+    <section class="hero-copy" id="top">
+      <h1><span>REST <b>×</b></span><span>FUNCTIONAL</span></h1>
+      <p class="tagline">心地よさで、<br>自分と世界を変えていく。</p>
+      <p class="description" id="about">3分間のビジュアル休憩体験。<br>美しい景色、心地よい音、やさしい余白が、<br>あなたを自然に整えていきます。</p>
+      <div class="cta-row">
+        <button class="preview-button" type="button" data-preview>
+          <span class="play" aria-hidden="true"></span>
+          <span>3 MIN REST PREVIEW</span>
+        </button>
+        <small>早期終了も可能です</small>
+      </div>
+    </section>
+
+    <div class="slide-nav" aria-label="背景画像を選択"></div>
+    <p class="slide-count"><span>01</span> / 06</p>
+
+    <section class="features" id="features" aria-label="体験の特徴">
+      <article>
+        <svg viewBox="0 0 48 48" aria-hidden="true"><path d="M3 39 18 12l8 14 5-8 14 21H3Z"/><path d="m13 27 5 3 5-4"/></svg>
+        <div><h2>VISUAL</h2><p>美しい自然や空間で<br>視覚をリセット</p></div>
+      </article>
+      <article id="sound">
+        <svg viewBox="0 0 48 48" aria-hidden="true"><path d="M18 36V12l20-5v24"/><circle cx="12" cy="37" r="6"/><circle cx="32" cy="32" r="6"/></svg>
+        <div><h2>SOUND</h2><p>心地よい音が<br>呼吸を深める</p></div>
+      </article>
+      <article>
+        <svg viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="25" r="16"/><path d="M24 9V4m0 21V14m0 11 6 5"/></svg>
+        <div><h2>TIMER</h2><p>3分間の休憩で<br>集中力を回復</p></div>
+      </article>
+      <article>
+        <svg viewBox="0 0 48 48" aria-hidden="true"><path d="M24 41S5 30 5 17C5 7 18 4 24 14 30 4 43 7 43 17c0 13-19 24-19 24Z"/></svg>
+        <div><h2>RECOVERY</h2><p>自分を整えることが<br>未来を変えていく</p></div>
+      </article>
+    </section>
+
+    <a class="scroll-cue" href="#features">SCROLL TO EXPLORE<span aria-hidden="true">↓</span></a>
+    <button class="exit-preview" type="button" data-preview>EXIT PREVIEW</button>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
