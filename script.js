@@ -28,3 +28,13 @@ setInterval(() => show(current + 1), 7000);
 document.querySelectorAll('[data-preview]').forEach(button => {
   button.addEventListener('click', () => document.querySelector('.hero').classList.toggle('is-preview'));
 });
+
+const bgm = document.querySelector('#bgm');
+const soundButton = document.querySelector('.sound-button');
+soundButton.addEventListener('click', () => {
+  const on = bgm.muted;
+  bgm.muted = !on;
+  soundButton.ariaPressed = String(on);
+  soundButton.textContent = `SOUND ${on ? 'ON' : 'OFF'}`;
+  if (on) bgm.play().catch(() => soundButton.click()); else bgm.pause();
+});

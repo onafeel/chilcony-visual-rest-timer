@@ -27,7 +27,7 @@
       <nav aria-label="メインナビゲーション">
         <a href="#about">ABOUT</a>
         <a href="#features">HOW IT WORKS</a>
-        <a href="#sound">SOUND</a>
+        <button class="sound-button" type="button" aria-pressed="false">SOUND OFF</button>
         <button class="try-button" type="button" data-preview>TRY</button>
       </nav>
     </header>
@@ -70,6 +70,7 @@
     <a class="scroll-cue" href="#features">SCROLL TO EXPLORE<span aria-hidden="true">↓</span></a>
     <button class="exit-preview" type="button" data-preview>EXIT PREVIEW</button>
   </main>
+  <audio id="bgm" src="assets/bgm.mp3" muted loop preload="metadata"></audio>
   <script src="script.js"></script>
 </body>
 </html>
