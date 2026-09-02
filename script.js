@@ -23,7 +23,7 @@ slides.forEach((_, i) => {
 });
 
 show(0);
-setInterval(() => show(current + 1), 8000);
+setInterval(() => show(current + 1), 7000);
 
 document.querySelectorAll('[data-preview]').forEach(button => {
   button.addEventListener('click', () => document.querySelector('.hero').classList.toggle('is-preview'));
