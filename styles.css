@@ -59,33 +59,6 @@ nav a, .sound-button, .try-button { font-size: 11px; letter-spacing: .12em; }
 .sound-button { position: relative; min-width: 76px; padding: 0; border: 0; background: none; opacity: .65; }
 .sound-button[aria-pressed="true"] { opacity: 1; }
 .sound-label { position: relative; z-index: 2; }
-.css-visualizer {
-  position: absolute;
-  left: 0;
-  top: 50%;
-  width: 100%;
-  height: 20px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  opacity: 0;
-  transform: translateY(-50%);
-  transition: opacity .5s ease;
-}
-.css-visualizer i {
-  width: 1px;
-  height: 100%;
-  background: currentColor;
-  transform: scaleY(.2);
-  animation: equalize .7s ease-in-out infinite alternate;
-  animation-play-state: paused;
-}
-.css-visualizer i:nth-child(3n + 2) { animation-delay: -.35s; }
-.css-visualizer i:nth-child(3n) { animation-delay: -.15s; }
-.css-visualizer i:nth-child(4n) { animation-delay: -.5s; }
-.sound-button[aria-pressed="true"] .css-visualizer { opacity: .28; }
-.sound-button[aria-pressed="true"] .css-visualizer i { animation-play-state: running; }
-@keyframes equalize { to { transform: scaleY(1); } }
 .try-button {
   min-width: 88px;
   padding: 11px 24px;
@@ -209,16 +182,17 @@ h1 b { font-size: .55em; font-weight: 200; }
 .scroll-cue span { font-size: 24px; font-weight: 200; }
 .pulse-visualizer {
   position: absolute;
-  top: 27%;
-  right: 14%;
-  width: 72px;
-  z-index: 2;
+  left: 50%;
+  top: 50%;
+  width: 62px;
+  z-index: 1;
   opacity: 0;
+  overflow: visible;
   filter: drop-shadow(0 0 5px rgba(0,0,0,.55));
   pointer-events: none;
+  transform: translate(-50%, -50%);
   transition: opacity .6s ease;
 }
-.pulse-visualizer svg { display: block; overflow: visible; }
 .pulse-core { fill: currentColor; }
 .pulse-ring {
   fill: none;
@@ -230,8 +204,8 @@ h1 b { font-size: .55em; font-weight: 200; }
   animation-play-state: paused;
 }
 .pulse-ring:last-child { animation-delay: -1.2s; }
-.hero:has(.sound-button[aria-pressed="true"]) .pulse-visualizer { opacity: .55; }
-.hero:has(.sound-button[aria-pressed="true"]) .pulse-ring { animation-play-state: running; }
+.sound-button[aria-pressed="true"] .pulse-visualizer { opacity: .55; }
+.sound-button[aria-pressed="true"] .pulse-ring { animation-play-state: running; }
 @keyframes pulse {
   from { opacity: .8; transform: scale(.15); }
   to { opacity: 0; transform: scale(1.2); }
@@ -293,11 +267,10 @@ h1 b { font-size: .55em; font-weight: 200; }
   .features h2 { font-size: 8px; margin-bottom: 3px; }
   .features p { font-size: 8px; }
   .scroll-cue { display: none; }
-  .pulse-visualizer { top: 125px; right: 24px; width: 52px; }
 }
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   .slide, .shade { transition: none; }
-  .css-visualizer i, .pulse-ring { animation: none; }
+  .pulse-ring { animation: none; }
 }
