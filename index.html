@@ -27,7 +27,11 @@
       <nav aria-label="メインナビゲーション">
         <a href="#about">ABOUT</a>
         <a href="#features">HOW IT WORKS</a>
-        <button class="sound-button" type="button" aria-pressed="false">SOUND OFF</button>
+        <button class="sound-button" type="button" aria-pressed="false">
+          <span class="css-visualizer" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+          <svg class="svg-visualizer" viewBox="0 0 140 30" aria-hidden="true"><path d="M0 15c10 0 10-8 20 0s10 8 20 0 10-8 20 0 10 8 20 0 10-8 20 0 10 8 20 0 10-8 20 0"/></svg>
+          <span class="sound-label">SOUND OFF</span>
+        </button>
         <button class="try-button" type="button" data-preview>TRY</button>
       </nav>
     </header>

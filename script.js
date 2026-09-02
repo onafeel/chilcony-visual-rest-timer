@@ -31,10 +31,11 @@ document.querySelectorAll('[data-preview]').forEach(button => {
 
 const bgm = document.querySelector('#bgm');
 const soundButton = document.querySelector('.sound-button');
+const soundLabel = document.querySelector('.sound-label');
 soundButton.addEventListener('click', () => {
   const on = bgm.muted;
   bgm.muted = !on;
   soundButton.ariaPressed = String(on);
-  soundButton.textContent = `SOUND ${on ? 'ON' : 'OFF'}`;
+  soundLabel.textContent = `SOUND ${on ? 'ON' : 'OFF'}`;
   if (on) bgm.play().catch(() => soundButton.click()); else bgm.pause();
 });

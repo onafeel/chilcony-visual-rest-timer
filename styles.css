@@ -56,8 +56,54 @@ a { text-decoration: none; }
 .brand span { font-size: 9px; letter-spacing: .22em; opacity: .72; }
 nav { display: flex; align-items: center; gap: clamp(28px, 4vw, 58px); }
 nav a, .sound-button, .try-button { font-size: 11px; letter-spacing: .12em; }
-.sound-button { padding: 0; border: 0; background: none; opacity: .65; }
+.sound-button { position: relative; min-width: 76px; padding: 0; border: 0; background: none; opacity: .65; }
 .sound-button[aria-pressed="true"] { opacity: 1; }
+.sound-label { position: relative; z-index: 2; }
+.css-visualizer {
+  position: absolute;
+  left: -14px;
+  top: 50%;
+  height: 18px;
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  opacity: 0;
+  transform: translateY(-50%);
+  transition: opacity .5s ease;
+}
+.css-visualizer i {
+  width: 2px;
+  height: 100%;
+  background: currentColor;
+  transform: scaleY(.2);
+  animation: equalize .7s ease-in-out infinite alternate;
+  animation-play-state: paused;
+}
+.css-visualizer i:nth-child(2) { animation-delay: -.35s; }
+.css-visualizer i:nth-child(3) { animation-delay: -.15s; }
+.css-visualizer i:nth-child(4) { animation-delay: -.5s; }
+.svg-visualizer {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 112px;
+  overflow: visible;
+  opacity: 0;
+  transform: translate(-50%, -50%);
+  transition: opacity .5s ease;
+}
+.svg-visualizer path {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1;
+  transform-origin: center;
+  animation: waveform 1.4s ease-in-out infinite alternate;
+  animation-play-state: paused;
+}
+.sound-button[aria-pressed="true"] :is(.css-visualizer, .svg-visualizer) { opacity: .38; }
+.sound-button[aria-pressed="true"] :is(.css-visualizer i, .svg-visualizer path) { animation-play-state: running; }
+@keyframes equalize { to { transform: scaleY(1); } }
+@keyframes waveform { to { transform: scaleY(.35); } }
 .try-button {
   min-width: 88px;
   padding: 11px 24px;
@@ -240,4 +286,5 @@ h1 b { font-size: .55em; font-weight: 200; }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   .slide, .shade { transition: none; }
+  .css-visualizer i, .svg-visualizer path { animation: none; }
 }
