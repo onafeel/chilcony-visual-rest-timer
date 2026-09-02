@@ -5,7 +5,11 @@ let current = 0;
 
 const show = index => {
   current = (index + slides.length) % slides.length;
-  slides.forEach((slide, i) => slide.classList.toggle('is-active', i === current));
+  slides.forEach((slide, i) => {
+    const active = i === current;
+    slide.classList.toggle('is-active', active);
+    if (slide.tagName === 'VIDEO') active ? (slide.currentTime = 0, slide.play().catch(() => {})) : slide.pause();
+  });
   [...nav.children].forEach((dot, i) => dot.classList.toggle('is-active', i === current));
   count.textContent = String(current + 1).padStart(2, '0');
 };
