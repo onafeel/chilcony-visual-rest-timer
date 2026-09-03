@@ -62,12 +62,11 @@ nav a, .sound-button, .try-button { font-size: 11px; letter-spacing: .12em; }
 .fullscreen-button {
   width: 34px;
   height: 34px;
-  padding: 7px;
-  border: 1px solid rgba(255,255,255,.45);
-  border-radius: 50%;
-  background: rgba(0,0,0,.12);
+  padding: 5px;
+  border: 0;
+  background: none;
 }
-.fullscreen-button svg { width: 100%; fill: none; stroke: currentColor; stroke-width: 1.4; }
+.fullscreen-button svg { width: 100%; fill: none; stroke: currentColor; stroke-width: 2.4; stroke-linecap: round; stroke-linejoin: round; }
 .fullscreen-exit { display: none; }
 .fullscreen-button[aria-pressed="true"] .fullscreen-enter { display: none; }
 .fullscreen-button[aria-pressed="true"] .fullscreen-exit { display: block; }
