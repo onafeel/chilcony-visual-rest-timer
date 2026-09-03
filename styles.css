@@ -59,6 +59,18 @@ nav a, .sound-button, .try-button { font-size: 11px; letter-spacing: .12em; }
 .sound-button { position: relative; min-width: 76px; padding: 0; border: 0; background: none; opacity: .65; }
 .sound-button[aria-pressed="true"] { opacity: 1; }
 .sound-label { position: relative; z-index: 2; }
+.fullscreen-button {
+  width: 34px;
+  height: 34px;
+  padding: 7px;
+  border: 1px solid rgba(255,255,255,.45);
+  border-radius: 50%;
+  background: rgba(0,0,0,.12);
+}
+.fullscreen-button svg { width: 100%; fill: none; stroke: currentColor; stroke-width: 1.4; }
+.fullscreen-exit { display: none; }
+.fullscreen-button[aria-pressed="true"] .fullscreen-enter { display: none; }
+.fullscreen-button[aria-pressed="true"] .fullscreen-exit { display: block; }
 .try-button {
   min-width: 88px;
   padding: 11px 24px;
@@ -250,6 +262,7 @@ h1 b { font-size: .55em; font-weight: 200; }
   .site-header { top: 24px; left: 22px; right: 22px; }
   .brand { gap: 7px; }
   nav a { display: none; }
+  nav { gap: 18px; }
   .try-button { min-width: auto; padding: 9px 18px; }
   .hero-copy { top: 21%; left: 22px; right: 22px; }
   h1 { font-size: clamp(45px, 13.3vw, 76px); line-height: 1.02; letter-spacing: 0; }

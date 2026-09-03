@@ -39,3 +39,14 @@ soundButton.addEventListener('click', () => {
   soundLabel.textContent = `SOUND ${on ? 'ON' : 'OFF'}`;
   if (on) bgm.play().catch(() => soundButton.click()); else bgm.pause();
 });
+
+const fullscreenButton = document.querySelector('.fullscreen-button');
+fullscreenButton.addEventListener('click', () => {
+  (document.fullscreenElement ? document.exitFullscreen() : document.documentElement.requestFullscreen()).catch(() => {});
+});
+document.addEventListener('fullscreenchange', () => {
+  const active = Boolean(document.fullscreenElement);
+  const label = active ? 'フルスクリーンを解除' : 'フルスクリーン表示';
+  fullscreenButton.ariaPressed = String(active);
+  fullscreenButton.ariaLabel = fullscreenButton.title = label;
+});
