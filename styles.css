@@ -71,7 +71,7 @@ nav a, .sound-button, .try-button { font-size: 11px; letter-spacing: .12em; }
 .fullscreen-exit { display: none; }
 .fullscreen-button[aria-pressed="true"] .fullscreen-enter { display: none; }
 .fullscreen-button[aria-pressed="true"] .fullscreen-exit { display: block; }
-.try-button {
+.try-button, .exit-preview {
   min-width: 88px;
   padding: 11px 24px;
   border: 1px solid rgba(255,255,255,.8);
@@ -224,14 +224,6 @@ h1 b { font-size: .55em; font-weight: 200; }
 }
 .exit-preview {
   display: none;
-  position: absolute;
-  left: clamp(28px, 6.8vw, 104px);
-  bottom: 5%;
-  z-index: 10;
-  padding: 12px 24px;
-  border: 1px solid currentColor;
-  border-radius: 999px;
-  background: rgba(0,0,0,.35);
   font-size: 10px;
   letter-spacing: .2em;
 }
@@ -245,6 +237,7 @@ h1 b { font-size: .55em; font-weight: 200; }
 .hero.is-preview .slide-count,
 .hero.is-preview .features,
 .hero.is-preview .scroll-cue { opacity: 0; pointer-events: none; transition: opacity .8s ease; }
+.hero.is-preview .try-button { display: none; }
 .hero.is-preview .exit-preview { display: block; }
 
 @media (max-height: 820px) and (min-width: 801px) {
@@ -263,7 +256,7 @@ h1 b { font-size: .55em; font-weight: 200; }
   .brand { gap: 7px; }
   nav a { display: none; }
   nav { gap: 18px; }
-  .try-button { min-width: auto; padding: 9px 18px; }
+  .try-button, .exit-preview { min-width: auto; padding: 9px 18px; }
   .hero-copy { top: 21%; left: 22px; right: 22px; }
   h1 { font-size: clamp(45px, 13.3vw, 76px); line-height: 1.02; letter-spacing: 0; }
   h1 span:first-child { gap: .5em; }
