@@ -60,14 +60,19 @@ nav a, .sound-button, .try-button { font-size: 11px; letter-spacing: .12em; }
 .sound-button[aria-pressed="true"] { opacity: 1; }
 .sound-label { position: relative; z-index: 2; }
 .fullscreen-button {
-  width: 34px;
+  width: 46px;
   height: 34px;
-  padding: 5px;
+  padding: 0;
+  display: grid;
+  place-items: center;
   border: 0;
-  background: none;
+  border-radius: 999px;
+  background: rgba(0,0,0,.2);
+  transition: background-color .3s ease;
 }
-.fullscreen-button svg { width: 100%; fill: none; stroke: currentColor; stroke-width: 2.4; stroke-linecap: round; stroke-linejoin: round; }
+.fullscreen-button svg { width: 23px; fill: none; stroke: currentColor; stroke-width: 2.8; stroke-linecap: round; stroke-linejoin: round; }
 .fullscreen-exit { display: none; }
+.fullscreen-button[aria-pressed="true"] { background: rgba(255,255,255,.13); }
 .fullscreen-button[aria-pressed="true"] .fullscreen-enter { display: none; }
 .fullscreen-button[aria-pressed="true"] .fullscreen-exit { display: block; }
 .try-button, .exit-preview {
